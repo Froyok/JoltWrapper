@@ -9,7 +9,9 @@ Because of **LuaJit**, callbacks cannot be triggered from other threads. Since J
 
 ## How it works
 
-The It focus on handling `OnContactAdded` and `OnContactRemoved` callbacks by storing the arguments in arrays to be accessed later. The library use a mutex to lock and unlock the array (one per event) to prevent several threads from editing it at the same time. The mutex is handled via the Unix `pthread` library.
+The wrapper focus on handling `OnContactAdded` and `OnContactRemoved` callbacks by storing the arguments in arrays to be accessed later. The library use a mutex to lock and unlock the array (one per event) to prevent several threads from editing it at the same time. The mutex is handled via the Unix `pthread` library.
+
+The library use a fixed array size to store the events. A counter has to be reset once the events have been consumed.
 
 ## How to build
 
