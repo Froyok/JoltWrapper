@@ -22,6 +22,6 @@ Refer to the file `Lua/demo.lua`.
 ## Notes
 
 - The code provided (mainly the lua and python files) are not plug and play and more here as guidelines/context.
-- The `pthread` library doesn't exist on Windows. Either compile with `mingw` on Windows, or use [something like this Cross platform thread wrapper](https://nachtimwald.com/2019/04/05/cross-platform-thread-wrapper/).
+- The `pthread` library doesn't exist on Windows. Either compile with `mingw` [on Windows](https://winlibs.com/) (and include `libwinpthread-1.dll`), or use [something like this Cross platform thread wrapper](https://nachtimwald.com/2019/04/05/cross-platform-thread-wrapper/).
 - This only handle the generic ContactListener, something similar for Character listener would need to be done as well.
 - Jolt ensure that all callbacks are trigerred once the Update() call is done, hence why the event arrays are accessed after on Lua side.
